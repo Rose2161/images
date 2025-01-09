@@ -1,5 +1,4 @@
-# [Choice] Node.js version (use -bookworm, and -bullseye variants on local arm64/Apple Silicon): 20, 18, 20-bookworm, 18-bookworm, 20-bullseye, 18-bullseye, 20-buster, 18-buster
-ARG VARIANT=20-bookworm
+ARG VARIANT=22-bookworm
 FROM node:${VARIANT}
 
 ARG USERNAME=node
@@ -7,9 +6,6 @@ ARG NPM_GLOBAL=/usr/local/share/npm-global
 
 # Add NPM global to PATH.
 ENV PATH=${NPM_GLOBAL}/bin:${PATH}
-
-# [Temporal] Bump npm version due to GHSA-c2qf-rxjj-qqgw
-RUN npm install -g npm@9.8.1
 
 RUN \
     # Configure global npm install location, use group to adapt to UID/GID changes
