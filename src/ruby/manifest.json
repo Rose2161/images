@@ -1,29 +1,30 @@
 {
-	"version": "2.0.1",
+	"version": "4.1.1",
 	"variants": [
+		"4.0-trixie",
 		"3.4-trixie",		
 		"3.3-trixie",
-		"3.2-trixie",		
+		"4.0-bookworm",		
 		"3.4-bookworm",		
-		"3.3-bookworm",
-		"3.2-bookworm",
-		"3.4-bullseye",		
-		"3.3-bullseye",
-		"3.2-bullseye"
+		"3.3-bookworm"
 	],
 	"build": {
-		"latest": "3.4-bookworm",
+		"latest": "4.0-trixie",
 		"rootDistro": "debian",
 		"architectures": {
+			"4.0-trixie": [
+				"linux/amd64",
+				"linux/arm64"
+			],
+			"4.0-bookworm": [
+				"linux/amd64",
+				"linux/arm64"
+			],
 			"3.4-trixie": [
 				"linux/amd64",
 				"linux/arm64"
 			],			
 			"3.3-trixie": [
-				"linux/amd64",
-				"linux/arm64"
-			],
-			"3.2-trixie": [
 				"linux/amd64",
 				"linux/arm64"
 			],			
@@ -32,22 +33,6 @@
 				"linux/arm64"
 			],			
 			"3.3-bookworm": [
-				"linux/amd64",
-				"linux/arm64"
-			],
-			"3.2-bookworm": [
-				"linux/amd64",
-				"linux/arm64"
-			],
-			"3.4-bullseye": [
-				"linux/amd64",
-				"linux/arm64"
-			],			
-			"3.3-bullseye": [
-				"linux/amd64",
-				"linux/arm64"
-			],
-			"3.2-bullseye": [
 				"linux/amd64",
 				"linux/arm64"
 			]
@@ -56,37 +41,29 @@
 			"ruby:${VERSION}-${VARIANT}"
 		],
 		"variantTags": {
-			"3.4-trixie": [
-				"ruby:${VERSION}-3",
-				"ruby:${VERSION}-3.4",
-				"ruby:${VERSION}-3-trixie",
+			"4.0-trixie": [
+				"ruby:${VERSION}-4",
+				"ruby:${VERSION}-4.0",
+				"ruby:${VERSION}-4-trixie",
 				"ruby:${VERSION}-trixie"
 			],
+			"4.0-bookworm": [
+				"ruby:${VERSION}-4-bookworm",
+				"ruby:${VERSION}-bookworm"
+			],
+			"3.4-trixie": [
+				"ruby:${VERSION}-3.4",
+				"ruby:${VERSION}-3.4-trixie"
+			],
 			"3.3-trixie": [
-				"ruby:${VERSION}-3.3"
-			],			
-			"3.2-trixie": [
-				"ruby:${VERSION}-3.2"
+				"ruby:${VERSION}-3.3",
+				"ruby:${VERSION}-3.3-trixie"
 			],			
 			"3.4-bookworm": [
-				"ruby:${VERSION}-3-bookworm",
-				"ruby:${VERSION}-bookworm"
+				"ruby:${VERSION}-3.4-bookworm"
 			],
 			"3.3-bookworm": [
 				"ruby:${VERSION}-3.3-bookworm"
-			],			
-			"3.2-bookworm": [
-				"ruby:${VERSION}-3.2-bookworm"
-			],
-			"3.4-bullseye": [
-				"ruby:${VERSION}-3-bullseye",
-				"ruby:${VERSION}-bullseye"
-			],
-			"3.3-bullseye": [
-				"ruby:${VERSION}-3.3-bullseye"
-			],			
-			"3.2-bullseye": [
-				"ruby:${VERSION}-3.2-bullseye"
 			]
 		}
 	},
@@ -103,7 +80,6 @@
 		"git": {
 			"Oh My Zsh!": "/home/vscode/.oh-my-zsh",
 			"nvm": "/usr/local/share/nvm",
-			"rbenv": "/usr/local/share/rbenv",
 			"ruby-build": "/usr/local/share/ruby-build"
 		},
 		"gem": [
@@ -112,8 +88,7 @@
 			"debase"
 		],
 		"other": {
-			"git": {},
-			"rvm": null
+			"git": {}
 		},
 		"languages": {
 			"Ruby": {

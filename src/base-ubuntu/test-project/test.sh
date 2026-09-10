@@ -6,6 +6,8 @@ source test-utils.sh vscode
 # Run common tests
 checkCommon
 
+check "lang-utf8" test "${LANG}" = "C.UTF-8"
+
 check "Oh My Zsh! theme" test -e $HOME/.oh-my-zsh/custom/themes/devcontainers.zsh-theme
 check "zsh theme symlink" test -e $HOME/.oh-my-zsh/custom/themes/codespaces.zsh-theme
 
@@ -18,6 +20,7 @@ check "set-git-config-user-name" sh -c "sudo git config --system user.name devco
 check "gitconfig-file-location" sh -c "ls /etc/gitconfig"
 check "gitconfig-contains-name" sh -c "cat /etc/gitconfig | grep 'name = devcontainers'"
 check "usr-local-etc-config-does-not-exist" test ! -f "/usr/local/etc/gitconfig"
+check "verify-timezone-data" sh -c "cat /etc/timezone | grep 'Etc/UTC'"
 
 check_ubuntu_user() {
     if ! id -u ubuntu > /dev/null 2>&1; then
@@ -31,8 +34,11 @@ check_ubuntu_user() {
 if grep -q 'VERSION_CODENAME=noble' /etc/os-release; then
     echo -e "\nThe base image is ubuntu:noble. Checking user Ubuntu.."
     check "uid" "check_ubuntu_user"
+elif grep -q 'VERSION_CODENAME=resolute' /etc/os-release; then
+    echo -e "\nThe base image is ubuntu:resolute. Checking user Ubuntu.."
+    check "uid" "check_ubuntu_user"
 else
-    echo -e "\nCannot check user Ubuntu. The base image is not ubuntu:noble."
+    echo -e "\nCannot check user Ubuntu. The base image is not ubuntu:noble or ubuntu:resolute."
 fi
 
 # Report result

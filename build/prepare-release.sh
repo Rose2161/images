@@ -38,6 +38,42 @@ bump_version() {
 	version=$(grep -oP '(?<="version": ")[^"]*' $manifestPath)
 	newVersion=$(echo $version | awk -F. -v OFS=. '{$NF += 1 ; print}')
 	sed -i "s/\"version\": \"$version\"/\"version\": \"$newVersion\"/g" $manifestPath
+	
+	# Also update version references in README.md
+	update_readme_version $directory $version $newVersion
+}
+
+update_readme_version() {
+	directory=$1
+	oldVersion=$2
+	newVersion=$3
+	readmePath="$directory/README.md"
+	
+	if [ ! -f "$readmePath" ]; then
+		echo "No README.md found at $readmePath, skipping README update"
+		return
+	fi
+	
+	# Extract major.minor from the version
+	majorMinor=$(echo "$oldVersion" | cut -d. -f1,2)
+	# Escape dots for use in sed/grep regex patterns so they match literal dots only
+	majorMinorEscaped=$(echo "$majorMinor" | sed 's/\./\\./g')
+	
+	# Check if major.minor version pattern exists in README
+	# Match :major.minor.patch followed by either - (variant) or ` (backtick)
+	if ! grep -qE ":${majorMinorEscaped}\.[0-9]+[-\`]" "$readmePath"; then
+		echo "ERROR: Version pattern ${majorMinor}.x not found in $readmePath"
+		exit 1
+	fi
+	
+	# Update full version references (e.g., 1.3.x-variant -> 1.3.3-variant, or 1.3.x` -> 1.3.3`)
+	# The pattern matches major.minor.any_patch followed by - (variant) or ` (backtick)
+	# We match after : (full image reference) or after ` (shortened tag examples)
+	sed -i "s/:${majorMinorEscaped}\.[0-9]*-/:${newVersion}-/g" "$readmePath"
+	sed -i "s/:${majorMinorEscaped}\.[0-9]*\`/:${newVersion}\`/g" "$readmePath"
+	sed -i "s/\`${majorMinorEscaped}\.[0-9]*-/\`${newVersion}-/g" "$readmePath"
+	
+	echo "Updated README.md version references from ${majorMinor}.x to $newVersion"
 }
 
 release_image() {

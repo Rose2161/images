@@ -2,13 +2,20 @@
 cd $(dirname "$0")
 
 source test-utils.sh node
+check "yarn_version" yarn --version
+sudo corepack enable && corepack prepare yarn@4.9.4 --activate
+check "yarn_version_new" yarn --version
 
 # Run common tests
 checkCommon
 
 # Image specific tests
 check "node" node --version
+check "lang-utf8" test "${LANG}" = "C.UTF-8"
 sudo rm -f yarn.lock
+sudo rm -rf .yarn/*
+sudo touch yarn.lock
+sudo chmod a+rw yarn.lock
 check "yarn" yarn install
 sudo rm -f package-lock.json
 check "eslint" eslint --no-warn-ignored src/server.ts

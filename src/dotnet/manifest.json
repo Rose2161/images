@@ -1,8 +1,8 @@
 {
-	"version": "1.5.4",
+	"version": "2.2.3",
 	"variants": [
-		"10.0-preview-trixie-slim",
-		"10.0-preview-noble",		
+		"11.0-preview-resolute",
+		"10.0-noble",
 		"9.0-bookworm-slim",
 		"9.0-noble",
 		"8.0-bookworm-slim",
@@ -10,20 +10,20 @@
 		"8.0-jammy"
 	],
 	"build": {
-		"latest": "9.0-bookworm-slim",
+		"latest": "10.0-noble",
 		"rootDistro": "debian",
 		"tags": [
 			"dotnet:${VERSION}-${VARIANT}"
 		],
 		"architectures": {
-			"10.0-preview-trixie-slim": [
+			"11.0-preview-resolute": [
 				"linux/amd64",
 				"linux/arm64"
 			],
-			"10.0-preview-noble": [
+			"10.0-noble": [
 				"linux/amd64",
 				"linux/arm64"
-			],			
+			],
 			"9.0-bookworm-slim": [
 				"linux/amd64",
 				"linux/arm64"
@@ -43,16 +43,17 @@
 			"8.0-jammy": [
 				"linux/amd64",
 				"linux/arm64"
-			]						
+			]
 		},
 		"variantTags": {
-			"10.0-preview-trixie-slim": [
-				"dotnet:${VERSION}-10.0-preview-trixie"
-			],	
-			"10.0-preview-noble": [
-				"dotnet:${VERSION}-10.0-preview",
-				"dotnet:${VERSION}-10.0-preview-noble"
-			],					
+			"11.0-preview-resolute": [
+				"dotnet:${VERSION}-11.0-preview",
+				"dotnet:${VERSION}-11.0-preview-resolute"
+			],
+			"10.0-noble": [
+				"dotnet:${VERSION}-10.0",
+				"dotnet:${VERSION}-10.0-noble"
+			],
 			"9.0-bookworm-slim": [
 				"dotnet:${VERSION}-9.0",
 				"dotnet:${VERSION}-9.0-bookworm"
@@ -60,7 +61,7 @@
 			"8.0-bookworm-slim": [
 				"dotnet:${VERSION}-8.0",
 				"dotnet:${VERSION}-8.0-bookworm"
-			]			
+			]
 		}
 	},
 	"dependencies": {
@@ -79,7 +80,7 @@
 		"languages": {
 			".NET": {
 				"cgIgnore": true,
-				"versionCommand": "dotnet --version | grep -oE '[0-9]+\\.[0-9]+\\.[0-9]+' | tr -d '\\n' && echo \\\" (\\$(dotnet --info | grep -ozP 'Host.*:\\s*Version:\\s*\\K[0-9]\\.[0-9]\\.[0-9]' | tr '\\0' '\\n'))\\\"",
+				"versionCommand": "dotnet --version | grep -oE '[0-9]+\\.[0-9]+\\.[0-9]+' | tr -d '\\n' && echo \\\" (\\$(dotnet --info | grep -ozP 'Host.*:\\s*Version:\\s*\\K[0-9]+\\.[0-9]+\\.[0-9]+' | tr '\\0' '\\n'))\\\"",
 				"path": "/usr",
 				"downloadUrl": "https://dotnet.microsoft.com/"
 			}

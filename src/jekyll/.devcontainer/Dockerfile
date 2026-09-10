@@ -1,4 +1,4 @@
-ARG VARIANT=3.3-bookworm
+ARG VARIANT=3.4-bookworm
 FROM mcr.microsoft.com/devcontainers/ruby:${VARIANT}
 
 USER root
@@ -18,10 +18,6 @@ RUN gem update --system
 RUN gem install sass-embedded -v 1.62.1
 RUN gem install jekyll-sass-converter -v 3.0.0
 RUN gem install bundler jekyll github-pages
-
-RUN chown -R "vscode:rvm" "/usr/local/rvm/" \
-    && chmod -R g+r+w "/usr/local/rvm/" \
-    && find "/usr/local/rvm/" -type d | xargs -n 1 chmod g+s
 
 COPY post-create.sh /usr/local/post-create.sh
 

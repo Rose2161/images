@@ -1,19 +1,19 @@
 {
-	"version": "2.0.27",
+	"version": "3.2.4",
 	"variants": [
-		"bookworm",
-		"bullseye"
+		"trixie",
+		"bookworm"
 	],
 	"build": {
 		"latest": false,
 		"rootDistro": "debian",
 		"parent": "base-debian",
 		"architectures": {
-			"bookworm": [
+			"trixie": [
 				"linux/amd64",
 				"linux/arm64"
 			],
-			"bullseye": [
+			"bookworm": [
 				"linux/amd64",
 				"linux/arm64"
 			]
@@ -22,13 +22,13 @@
 			"java:${VERSION}-8-${VARIANT}"
 		],
 		"variantTags": {
-			"bookworm": [
+			"trixie": [
 				"java:${VERSION}-8",
-				"java:${VERSION}-8-jdk-bookworm"
+				"java:${VERSION}-8-jdk-trixie"
 			],
-			"bullseye": [
-				"java:${VERSION}-8-jdk-bullseye"
-			]
+			"bookworm": [
+				"java:${VERSION}-8-jdk-bookworm"
+			]	
 		}
 	},
 	"dependencies": {
@@ -56,7 +56,7 @@
 		"languages": {
 			"Java": {
 				"cgIgnore": true,
-				"versionCommand": "/usr/local/sdkman/candidates/java/current/bin/java -version 2>&1 | grep -ozP '^openjdk\\sversion\\s\\\"\\K[^\\\"]+' | tr '\\0' '\\n' && /usr/local/openjdk-*/bin/java --version | grep -ozP 'openjdk\\s+\\K[0-9]+\\.[0-9]+\\.[0-9]+' | tr '\\0' '\\n'",
+				"versionCommand": "/usr/local/sdkman/candidates/java/current/bin/java -version 2>&1 | grep -ozP '^openjdk\\sversion\\s\\\"\\K[^\\\"]+' | tr '\\0' '\\n'",
 				"path": "/usr/local/sdkman/candidates/java/current<br />/usr/local"
 			}
 		}

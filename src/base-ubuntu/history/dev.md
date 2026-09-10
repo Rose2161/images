@@ -5,23 +5,23 @@
 **Source release/branch:** [main](https://github.com/devcontainers/images/tree/main/src/base-ubuntu)
 
 **Image variations:**
+- [resolute](#variant-resolute)
 - [noble](#variant-noble)
 - [jammy](#variant-jammy)
-- [focal](#variant-focal)
 
-## Variant: noble
+## Variant: resolute
 
-**Digest:** sha256:14d91cec2ef7d1f53c94c04d79ce129479dae25df07701d21793acecfc3e0aee
+**Digest:** sha256:103e274b13dabe7eee65dff44bdddc39be4f85d63c451b76508a94f5c634ee3c
 
 **Tags:**
 ```
-mcr.microsoft.com/devcontainers/base:dev-noble
-mcr.microsoft.com/devcontainers/base:dev-ubuntu-24.04
-mcr.microsoft.com/devcontainers/base:dev-ubuntu24.04
+mcr.microsoft.com/devcontainers/base:dev-resolute
+mcr.microsoft.com/devcontainers/base:dev-ubuntu26.04
+mcr.microsoft.com/devcontainers/base:dev-ubuntu
 ```
 > *To keep up to date, we recommend using partial version numbers. Use the major version number to get all non-breaking changes (e.g. `0-`) or major and minor to only get fixes (e.g. `0.200-`).*
 
-**Linux distribution:** Ubuntu 24.04.2 LTS (debian-like distro)
+**Linux distribution:** Ubuntu 26.04 LTS (debian-like distro)
 
 **Architectures:** linux/amd64, linux/arm64
 
@@ -32,66 +32,136 @@ mcr.microsoft.com/devcontainers/base:dev-ubuntu24.04
 
 | Tool | Commit | Path |
 |------|--------|------|
-| [Oh My Zsh!](https://github.com/ohmyzsh/ohmyzsh) | 1c2127727af0ac452292f844ee32306f12906d03 | /home/vscode/.oh-my-zsh |
+| [Oh My Zsh!](https://github.com/ohmyzsh/ohmyzsh) | 97b27bb2ec0701330b18c2d3e340b22e742b3fa8 | /home/vscode/.oh-my-zsh |
 
 **Other tools and utilities**
 
 | Tool | Version | Path |
 |------|---------|------|
-| [git](https://github.com/git/git) | 2.48.1 | 
+| [git](https://github.com/git/git) | 2.55.0 | 
 
 **Additional linux tools and packages**
 
 | Tool / library | Version |
 |----------------|---------|
-| apt-transport-https | 2.7.14build2 |
-| apt-utils | 2.7.14build2 |
-| ca-certificates | 20240203 |
-| curl | 8.5.0-2ubuntu10.6 |
+| apt-transport-https | 3.2.0 |
+| apt-utils | 3.2.0 |
+| ca-certificates | 20260601~26.04.1 |
+| curl | 8.18.0-1ubuntu2.3 |
+| dialog | 1.3-20260107-1 |
+| git | 1:2.53.0-1ubuntu1 |
+| gnupg2 | 2.4.8-4ubuntu3 |
+| htop | 3.4.1-5build2 |
+| iproute2 | 6.19.0-1ubuntu1.1 |
+| jq | 1.8.1-4ubuntu2 |
+| less | 668-1build1 |
+| libc6 | 2.43-2ubuntu2.3 |
+| libgssapi-krb5-2 | 1.22.1-2ubuntu4.1 |
+| libicu78 | 78.2-2ubuntu1 |
+| libkrb5-3 | 1.22.1-2ubuntu4.1 |
+| libstdc++6 | 16-20260322-1ubuntu1 |
+| locales | 2.43-2ubuntu2.3 |
+| lsb-release | 12.1-2build1 |
+| lsof | 4.99.4+dfsg-2build2 |
+| man-db | 2.13.1-1build1 |
+| manpages | 6.17-1 |
+| manpages-dev | 6.17-1 |
+| nano | 8.7.1-1ubuntu0.1 |
+| ncdu | 1.22-1build1 |
+| net-tools | 2.10-2ubuntu1 |
+| openssh-client | 1:10.2p1-2ubuntu3.5 |
+| procps | 2:4.0.4-9ubuntu1 |
+| psmisc | 23.7-2ubuntu2 |
+| rsync | 3.4.1+ds1-7ubuntu0.3 |
+| strace | 6.19+ds-0ubuntu5 |
+| sudo | 1.9.17p2-1ubuntu3 |
+| unzip | 6.0-29ubuntu1 |
+| vim-tiny | 2:9.1.2141-1ubuntu4.7 |
+| wget | 1.25.0-2ubuntu4.3 |
+| zip | 3.0-15ubuntu3 |
+| zlib1g | 1:1.3.dfsg+really1.3.1-1ubuntu3 |
+| zsh | 5.9-8ubuntu3 |
+
+## Variant: noble
+
+**Digest:** sha256:f8d39347203b0a6e24cca168d3bac22571d5c2bab69e205142f8d4fcbdc76060
+
+**Tags:**
+```
+mcr.microsoft.com/devcontainers/base:dev-noble
+mcr.microsoft.com/devcontainers/base:dev-ubuntu24.04
+```
+> *To keep up to date, we recommend using partial version numbers. Use the major version number to get all non-breaking changes (e.g. `0-`) or major and minor to only get fixes (e.g. `0.200-`).*
+
+**Linux distribution:** Ubuntu 24.04.4 LTS (debian-like distro)
+
+**Architectures:** linux/amd64, linux/arm64
+
+**Available (non-root) user:** vscode
+
+### Contents
+**Tools installed using git**
+
+| Tool | Commit | Path |
+|------|--------|------|
+| [Oh My Zsh!](https://github.com/ohmyzsh/ohmyzsh) | 97b27bb2ec0701330b18c2d3e340b22e742b3fa8 | /home/vscode/.oh-my-zsh |
+
+**Other tools and utilities**
+
+| Tool | Version | Path |
+|------|---------|------|
+| [git](https://github.com/git/git) | 2.55.0 | 
+
+**Additional linux tools and packages**
+
+| Tool / library | Version |
+|----------------|---------|
+| apt-transport-https | 2.8.3 |
+| apt-utils | 2.8.3 |
+| ca-certificates | 20260601~24.04.1 |
+| curl | 8.5.0-2ubuntu10.11 |
 | dialog | 1.3-20240101-1 |
-| git | 1:2.43.0-1ubuntu7.2 |
-| gnupg2 | 2.4.4-2ubuntu17 |
+| git | 1:2.43.0-1ubuntu7.3 |
+| gnupg2 | 2.4.4-2ubuntu17.4 |
 | htop | 3.3.0-4build1 |
-| iproute2 | 6.1.0-1ubuntu6 |
-| jq | 1.7.1-3build1 |
+| iproute2 | 6.1.0-1ubuntu6.4 |
+| jq | 1.7.1-3ubuntu0.24.04.2 |
 | less | 590-2ubuntu2.1 |
-| libc6 | 2.39-0ubuntu8.4 |
-| libgssapi-krb5-2 | 1.20.1-6ubuntu2.5 |
+| libc6 | 2.39-0ubuntu8.8 |
+| libgssapi-krb5-2 | 1.20.1-6ubuntu2.7 |
 | libicu74 | 74.2-1ubuntu3.1 |
-| libkrb5-3 | 1.20.1-6ubuntu2.5 |
-| libstdc++6 | 14.2.0-4ubuntu2~24.04 |
-| locales | 2.39-0ubuntu8.4 |
+| libkrb5-3 | 1.20.1-6ubuntu2.7 |
+| libstdc++6 | 14.2.0-4ubuntu2~24.04.1 |
+| locales | 2.39-0ubuntu8.8 |
 | lsb-release | 12.0-2 |
 | lsof | 4.95.0-1build3 |
 | man-db | 2.12.0-4build2 |
 | manpages | 6.7-2 |
 | manpages-dev | 6.7-2 |
-| nano | 7.2-2ubuntu0.1 |
+| nano | 7.2-2ubuntu0.2 |
 | ncdu | 1.19-0.1 |
-| net-tools | 2.10-0.1ubuntu4 |
-| openssh-client | 1:9.6p1-3ubuntu13.8 |
+| net-tools | 2.10-0.1ubuntu4.4 |
+| openssh-client | 1:9.6p1-3ubuntu13.18 |
 | procps | 2:4.0.4-4ubuntu3.2 |
 | psmisc | 23.7-1build1 |
-| rsync | 3.2.7-1ubuntu1.2 |
+| rsync | 3.2.7-1ubuntu1.5 |
 | strace | 6.8-0ubuntu2 |
-| sudo | 1.9.15p5-3ubuntu5 |
+| sudo | 1.9.15p5-3ubuntu5.24.04.2 |
 | unzip | 6.0-28ubuntu4.1 |
-| vim-tiny | 2:9.1.0016-1ubuntu7.6 |
-| wget | 1.21.4-1ubuntu4.1 |
+| vim-tiny | 2:9.1.0016-1ubuntu7.18 |
+| wget | 1.21.4-1ubuntu4.4 |
 | zip | 3.0-13ubuntu0.2 |
 | zlib1g | 1:1.3.dfsg-3.1ubuntu2.1 |
 | zsh | 5.9-6ubuntu2 |
 
 ## Variant: jammy
 
-**Digest:** sha256:8eff0898e4db12d35c9d439946fc6256a6f6e575230aa18f304ad17d0cdc5d0e
+**Digest:** sha256:0c2c18d08c6855f37039ebf29761992d0117ca1433ed8c8fd878bd604c2bbd2e
 
 **Tags:**
 ```
 mcr.microsoft.com/devcontainers/base:dev-jammy
-mcr.microsoft.com/devcontainers/base:dev-ubuntu-22.04
 mcr.microsoft.com/devcontainers/base:dev-ubuntu22.04
-mcr.microsoft.com/devcontainers/base:dev-ubuntu
 ```
 > *To keep up to date, we recommend using partial version numbers. Use the major version number to get all non-breaking changes (e.g. `0-`) or major and minor to only get fixes (e.g. `0.200-`).*
 
@@ -106,130 +176,54 @@ mcr.microsoft.com/devcontainers/base:dev-ubuntu
 
 | Tool | Commit | Path |
 |------|--------|------|
-| [Oh My Zsh!](https://github.com/ohmyzsh/ohmyzsh) | 1c2127727af0ac452292f844ee32306f12906d03 | /home/vscode/.oh-my-zsh |
+| [Oh My Zsh!](https://github.com/ohmyzsh/ohmyzsh) | 97b27bb2ec0701330b18c2d3e340b22e742b3fa8 | /home/vscode/.oh-my-zsh |
 
 **Other tools and utilities**
 
 | Tool | Version | Path |
 |------|---------|------|
-| [git](https://github.com/git/git) | 2.48.1 | 
+| [git](https://github.com/git/git) | 2.55.0 | 
 
 **Additional linux tools and packages**
 
 | Tool / library | Version |
 |----------------|---------|
-| apt-transport-https | 2.4.13 |
-| apt-utils | 2.4.13 |
-| ca-certificates | 20240203~22.04.1 |
-| curl | 7.81.0-1ubuntu1.20 |
+| apt-transport-https | 2.4.14 |
+| apt-utils | 2.4.14 |
+| ca-certificates | 20260601~22.04.1 |
+| curl | 7.81.0-1ubuntu1.25 |
 | dialog | 1.3-20211214-1 |
-| git | 1:2.34.1-1ubuntu1.12 |
-| gnupg2 | 2.2.27-3ubuntu2.1 |
+| git | 1:2.34.1-1ubuntu1.17 |
+| gnupg2 | 2.2.27-3ubuntu2.5 |
 | htop | 3.0.5-7build2 |
-| iproute2 | 5.15.0-1ubuntu2 |
-| jq | 1.6-2.1ubuntu3 |
+| iproute2 | 5.15.0-1ubuntu2.2 |
+| jq | 1.6-2.1ubuntu3.2 |
 | less | 590-1ubuntu0.22.04.3 |
-| libc6 | 2.35-0ubuntu3.9 |
-| libgssapi-krb5-2 | 1.19.2-2ubuntu0.6 |
+| libc6 | 2.35-0ubuntu3.14 |
+| libgssapi-krb5-2 | 1.19.2-2ubuntu0.8 |
 | libicu70 | 70.1-2 |
-| libkrb5-3 | 1.19.2-2ubuntu0.6 |
+| libkrb5-3 | 1.19.2-2ubuntu0.8 |
 | liblttng-ust1 | 2.13.1-1ubuntu1 |
-| libstdc++6 | 12.3.0-1ubuntu1~22.04 |
-| locales | 2.35-0ubuntu3.9 |
+| libstdc++6 | 12.3.0-1ubuntu1~22.04.3 |
+| locales | 2.35-0ubuntu3.14 |
 | lsb-release | 11.1.0ubuntu4 |
 | lsof | 4.93.2+dfsg-1.1build2 |
 | man-db | 2.10.2-1 |
 | manpages | 5.10-1ubuntu1 |
 | manpages-dev | 5.10-1ubuntu1 |
-| nano | 6.2-1ubuntu0.1 |
+| nano | 6.2-1ubuntu0.2 |
 | ncdu | 1.15.1-1 |
-| net-tools | 1.60+git20181103.0eebece-1ubuntu5 |
-| openssh-client | 1:8.9p1-3ubuntu0.11 |
+| net-tools | 1.60+git20181103.0eebece-1ubuntu5.4 |
+| openssh-client | 1:8.9p1-3ubuntu0.16 |
 | procps | 2:3.3.17-6ubuntu2.1 |
 | psmisc | 23.4-2build3 |
-| rsync | 3.2.7-0ubuntu0.22.04.4 |
+| rsync | 3.2.7-0ubuntu0.22.04.7 |
 | strace | 5.16-0ubuntu3 |
-| sudo | 1.9.9-1ubuntu2.4 |
+| sudo | 1.9.9-1ubuntu2.6 |
 | unzip | 6.0-26ubuntu3.2 |
-| vim-tiny | 2:8.2.3995-1ubuntu2.23 |
-| wget | 1.21.2-2ubuntu1.1 |
+| vim-tiny | 2:8.2.3995-1ubuntu2.34 |
+| wget | 1.21.2-2ubuntu1.4 |
 | zip | 3.0-12build2 |
 | zlib1g | 1:1.2.11.dfsg-2ubuntu9.2 |
 | zsh | 5.8.1-1 |
-
-## Variant: focal
-
-**Digest:** sha256:e0803103ed4940948cb7f89abf233a98e3a77a2a2b32e9d9a5b43ec0648b56cf
-
-**Tags:**
-```
-mcr.microsoft.com/devcontainers/base:dev-focal
-mcr.microsoft.com/devcontainers/base:dev-ubuntu-20.04
-mcr.microsoft.com/devcontainers/base:dev-ubuntu20.04
-```
-> *To keep up to date, we recommend using partial version numbers. Use the major version number to get all non-breaking changes (e.g. `0-`) or major and minor to only get fixes (e.g. `0.200-`).*
-
-**Linux distribution:** Ubuntu 20.04.6 LTS (debian-like distro)
-
-**Architectures:** linux/amd64
-
-**Available (non-root) user:** vscode
-
-### Contents
-**Tools installed using git**
-
-| Tool | Commit | Path |
-|------|--------|------|
-| [Oh My Zsh!](https://github.com/ohmyzsh/ohmyzsh) | 1c2127727af0ac452292f844ee32306f12906d03 | /home/vscode/.oh-my-zsh |
-
-**Other tools and utilities**
-
-| Tool | Version | Path |
-|------|---------|------|
-| [git](https://github.com/git/git) | 2.48.1 | 
-
-**Additional linux tools and packages**
-
-| Tool / library | Version |
-|----------------|---------|
-| apt-transport-https | 2.0.10 |
-| apt-utils | 2.0.10 |
-| ca-certificates | 20240203~20.04.1 |
-| curl | 7.68.0-1ubuntu2.25 |
-| dialog | 1.3-20190808-1 |
-| git | 1:2.25.1-1ubuntu3.14 |
-| gnupg2 | 2.2.19-3ubuntu2.2 |
-| htop | 2.2.0-2build1 |
-| iproute2 | 5.5.0-1ubuntu1 |
-| jq | 1.6-1ubuntu0.20.04.1 |
-| less | 551-1ubuntu0.3 |
-| libc6 | 2.31-0ubuntu9.17 |
-| libgcc1 | 1:10.5.0-1ubuntu1~20.04 |
-| libgssapi-krb5-2 | 1.17-6ubuntu4.9 |
-| libicu66 | 66.1-2ubuntu2.1 |
-| libkrb5-3 | 1.17-6ubuntu4.9 |
-| liblttng-ust0 | 2.11.0-1 |
-| libssl1.1 | 1.1.1f-1ubuntu2.24 |
-| libstdc++6 | 10.5.0-1ubuntu1~20.04 |
-| locales | 2.31-0ubuntu9.17 |
-| lsb-release | 11.1.0ubuntu2 |
-| lsof | 4.93.2+dfsg-1ubuntu0.20.04.1 |
-| man-db | 2.9.1-1 |
-| manpages | 5.05-1 |
-| manpages-dev | 5.05-1 |
-| nano | 4.8-1ubuntu1.1 |
-| ncdu | 1.14.1-1 |
-| net-tools | 1.60+git20180626.aebd88e-1ubuntu1 |
-| openssh-client | 1:8.2p1-4ubuntu0.12 |
-| procps | 2:3.3.16-1ubuntu2.4 |
-| psmisc | 23.3-1 |
-| rsync | 3.1.3-8ubuntu0.9 |
-| strace | 5.5-3ubuntu1 |
-| sudo | 1.8.31-1ubuntu1.5 |
-| unzip | 6.0-25ubuntu1.2 |
-| vim-tiny | 2:8.1.2269-1ubuntu5.31 |
-| wget | 1.20.3-1ubuntu2.1 |
-| zip | 3.0-11build1 |
-| zlib1g | 1:1.2.11.dfsg-2ubuntu1.5 |
-| zsh | 5.8-3ubuntu1.1 |
 

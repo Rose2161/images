@@ -1,9 +1,8 @@
 {
-	"version": "2.0.1",
+	"version": "2.2.1",
 	"variants": [
 		"trixie",
-		"bookworm",
-		"bullseye"
+		"bookworm"
 	],
 	"build": {
 		"latest": "trixie",
@@ -16,10 +15,6 @@
 			"bookworm": [
 				"linux/amd64",
 				"linux/arm64"
-			],
-			"bullseye": [
-				"linux/amd64",
-				"linux/arm64"
 			]
 		},
 		"tags": [
@@ -27,18 +22,12 @@
 		],
 		"variantTags": {
 			"trixie": [
-				"base:${VERSION}-debian-13",
 				"base:${VERSION}-debian13",
 				"base:${VERSION}-debian",
 				"base:${VERSION}"
 			],
 			"bookworm": [
-				"base:${VERSION}-debian-12",
 				"base:${VERSION}-debian12"
-			],
-			"bullseye": [
-				"base:${VERSION}-debian-11",
-				"base:${VERSION}-debian11"
 			]
 		}
 	},
